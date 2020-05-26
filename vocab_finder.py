@@ -41,6 +41,8 @@ if choice.lower() == "s":
         # no results for search
         if count == 0:
             errorMessage()
+           
+        print("Number of words found:", count)
 
 
 #EFFECTS: adds row to file
