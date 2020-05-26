@@ -6,8 +6,8 @@ When I'm writing, I sometimes forget the exact word I need at that moment. I mig
 ## 1. Users can search for vocabulary words in a CSV file by choosing 's'. 
 They can decide which criteria: the word itself, the type of word (noun, adjective, adverb, etc.) or by a word in the definition. Every row that is matched with the query is returned. Each word in the definition column is a separate string. 
 
-###### search queries can be
-   - **simply word** : returns entire row of that word
+#### search queries can be
+   - **word** : returns entire row of that word
         - input example:    word, querulous
    - **type** : adjective, noun, adverb, verb: returns all rows of words that match type
         - input example:    type, adjective
@@ -18,7 +18,8 @@ They can decide which criteria: the word itself, the type of word (noun, adjecti
         - querulous, adjective, full of complaints; complaining in an annoyed way
 
 ## 2. Users can add their own words to the CSV file by choosing 'a' and using the format | word, type, meaning of the word | 
-# Note:
+
+### Note:
 The rows are separated by commas, so a definition with commas will create new columns. Instead, do not put any spaces after a comma. The search function for the meaning column can separate words from semicolons, commas, etc. 
 
 ## 3. Users can remove selected words from the file and the remaining rows will be written in a new file.
