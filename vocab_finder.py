@@ -44,6 +44,7 @@ if choice.lower() == "s":
 
 
 #EFFECTS: adds row to file
+#MODIFIES: original CSV file
 # can shoose to mass add words and quit when completed
 elif choice.lower() == "a":
     # use bool to loop through adding rows until user chooses to quit
@@ -76,6 +77,7 @@ elif choice.lower() == "w":
 
 #REQUIRES: CSV file must not be empty
 #EFFECTS: Removes a selected row from file
+#MODIFIES: A new CSV file filled with remaining words
 elif choice.lower() == "r":
     running = True
     remove_row = raw_input("Enter word that you want to remove: \n")
@@ -85,9 +87,10 @@ elif choice.lower() == "r":
             reader = csv.reader(codecs.EncodedFile(csvfile, 'utf8', 'utf_8_sig'))
             writer = csv.writer(output)
             for row in reader:
-                # if row is the row with the word
+                # only consider words that are not the removed word
                 if remove_row != row[0]:
                     updatedlist.append(row)
+                    # adds remaining words to a new CSV file
                     with open("vocab_new.csv","w") as f:
                         writer = csv.writer(f)
                         writer.writerows(updatedlist)
