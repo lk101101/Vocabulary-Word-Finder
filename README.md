@@ -20,8 +20,8 @@ They can decide which criteria: the word itself, the type of word (noun, adjecti
 ## 2. Users can add their own words to the CSV file by choosing 'a'. 
 Use the format | word, type, meaning of the word |. Users have the option to add words in bulk or choose 'quit' to exit the program. 
 
-### Note:
-The rows are separated by commas, so a definition with commas will create new columns. Instead, do not put any spaces after a comma. The search function for the meaning column can separate words from semicolons, commas, etc. 
+#### Note:
+The rows are separated by commas, so a definition with commas will create new columns. Instead, do not put any spaces after a comma when adding rows. The search function for the meaning column, however, can separate words from semicolons, commas, and other symbols. 
 
 ## 3. Users can remove selected words from the file and the remaining rows will be written in a new file.
 
