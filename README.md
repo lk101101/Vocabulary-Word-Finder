@@ -1,6 +1,6 @@
 # Python-Vocabulary-Word-Finder
 
-When I'm writing, I sometimes forget the exact word I need at that moment. I might remember the word, but not the meaning, or vice versa. To find the word, I would search through my Google Doc of 800+ vocab words, which is time-consuming and inefficient. I realized that I could code a more practical way to sort through my vocab words. 
+When I'm writing, I sometimes forget the exact word I need at that moment. I might remember the word, but not the meaning, or vice versa. To find the word, I would search through my Google Doc of 800+ vocab words, which is time-consuming and inefficient. I realized that I could code a more practical way to sort through my vocab words. This code requires Python 2.7 and a CSV file with at least 3 columns.
 
 
 ## 1. Users can search for vocabulary words in a CSV file by choosing 's'. 
