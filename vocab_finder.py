@@ -1,3 +1,9 @@
+from __future__ import print_function
+import csv
+import codecs
+import random
+import re
+
 print(" ")
 print("Welcome to Vocab Finder! Please select an option from the menu below: \n")
 print("Search vocabulary (s)", "Add word (a)", "Remove word (r)", "Random word (w)", sep='\n')
