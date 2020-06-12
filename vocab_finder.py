@@ -21,6 +21,7 @@ if choice.lower() == "s":
             print("No results matched your search.")
 
         for row in reader:
+            
             def updateCount():
                 global count
                 count += 1
@@ -48,23 +49,25 @@ if choice.lower() == "s":
         if count == 0:
             errorMessage()
            
-        print("Number of words found:", count)
+        print("Number of results found:", count)
 
 
 #EFFECTS: adds row to file
 #MODIFIES: original CSV file
-# can shoose to mass add words and quit when completed
+# loop allows user to add words in bulk and quit when completed
 elif choice.lower() == "a":
     # use bool to loop through adding rows until user chooses to quit
-    running = True
-    while running:
-        #split input by commas
+    loop = True
+    while loop:
+        # split input by commas
         add_row = raw_input("Enter a new word using format | word, type, meaning | or quit: \n").split(", ")
-
+        
+        # end loop, quit program
         if add_row[0] == "quit":
             print("Finished adding words.")
-            running = False;
+            loop = False;
         else:
+            # appends new row(s) to end of file
             with open('vocab.csv', 'a+') as f:
                 writer = csv.writer(f)
                 writer.writerow(add_row)
@@ -75,7 +78,7 @@ elif choice.lower() == "a":
     # enter as word, type, data
 
 #REQUIRES: CSV file must not be empty
-#EFFECTS: Returns a random word row
+#EFFECTS: Returns a random row
 elif choice.lower() == "w":
     with open('vocab.csv', 'rb') as f:
         reader = csv.reader(codecs.EncodedFile(f, 'utf8', 'utf_8_sig'))
@@ -87,10 +90,10 @@ elif choice.lower() == "w":
 #EFFECTS: Removes a selected row from file
 #MODIFIES: A new CSV file filled with remaining words
 elif choice.lower() == "r":
-    running = True
+    loop = True
     remove_row = raw_input("Enter word that you want to remove: \n")
     updatedlist = []
-    while running:
+    while loop:
         with open('vocab.csv', 'r+') as csvfile, open('vocab_new.csv', 'wb') as output:
             reader = csv.reader(codecs.EncodedFile(csvfile, 'utf8', 'utf_8_sig'))
             writer = csv.writer(output)
@@ -102,4 +105,4 @@ elif choice.lower() == "r":
                     with open("vocab_new.csv","w") as f:
                         writer = csv.writer(f)
                         writer.writerows(updatedlist)
-                        running = False
+                        loop = False
