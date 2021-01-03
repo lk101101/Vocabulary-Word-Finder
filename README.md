@@ -28,7 +28,3 @@ Since CSV files are separated by commas, a definition with commas will create ne
 ## 3. Users can remove selected words from the file and the remaining rows will be written in a new file.
 
 ## 4. Users can return a random word row from a non-empty CSV file.
-
-### Potential Uses for Program
-- Add additional columns for pronunciation guides, origins, and example sentences. 
-- Use program to organize music / books or track spending
